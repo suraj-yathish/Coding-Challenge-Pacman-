@@ -1,8 +1,9 @@
 """
-The main is responsible for invocation of the robot with the commands
-Input: File with the commands e.g. commands_1.txt
-Output: Robot object
-Sample Invocation: python main.py input/commands_1.txt
+This main function invokes pacman with the commands
+
+Input: File with the commands e.g. test_command_1.txt
+Output: Pacman object
+How to Invoke: python main.py input/test_command_1.txt
 """
 
 import sys
@@ -27,7 +28,7 @@ def main():
 
 
     if "PLACE" not in Commands[0]:
-        print("The first valid command to the robot is a PLACE command, please specify it")
+        print("The first valid command to the pacman is a PLACE command, please specify it")
 
 
     elif "PLACE" in Commands[0]:
