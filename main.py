@@ -7,7 +7,7 @@ Sample Invocation: python main.py input/commands_1.txt
 
 import sys
 from utils import readFile,preprocessCommands
-from robot import Robot
+from pacman import Pacman
 from direction import Direction
 from grid import Grid
 
@@ -23,7 +23,7 @@ def main():
 
 
     grid = Grid()
-    robot = Robot(orientations=orientations)
+    pacman = Pacman(orientations=orientations)
 
 
     if "PLACE" not in Commands[0]:
@@ -38,10 +38,10 @@ def main():
                     y_axis = float(command_splitted[1])
                     facing = command_splitted[2]
                     orientations_index = orientations.index(facing)
-                    robot_position = Direction(x_axis=x_axis, y_axis=y_axis)
-                    robot = robot.place(Direction=robot_position,grid=grid,facing=orientations_index/2.0)
+                    pacman_position = Direction(x_axis=x_axis, y_axis=y_axis)
+                    pacman = pacman.place(Direction=pacman_position,grid=grid,facing=orientations_index/2.0)
                 else:
-                    robot = getattr(robot,command.lower())()
+                    pacman = getattr(pacman,command.lower())()
 
 if __name__ == "__main__":
  main()
